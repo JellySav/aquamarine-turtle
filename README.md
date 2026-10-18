@@ -1,7 +1,6 @@
-# 🐢 Aquamarine Turtle // EX-01 Ocean Exploration Protocol
+# Aquamarine Turtle // EX-01 Ocean Exploration Protocol
 
-> **Simulador Interactivo Sci-Fi para Ferias de Sostenibilidad Marina**  
-> Desarrollado con Next.js, Tailwind CSS y desplegado en Vercel.
+**Simulador interactivo de exploración marina** desarrollado con Next.js y Tailwind CSS.
 
 
 ## Visión General del Proyecto
@@ -13,36 +12,45 @@ A través de dinámicas de escaneo estilo *Pokédex*, el juego sumerge a los vis
 
 ## Misiones y Sectores de Exploración
 
-El **Diario 01: Aquamarine Turtle** se divide en 4 sectores de reconocimiento:
+El **Diario 01: Aquamarine Turtle** comienza en las costas y se amplía con tres niveles oceánicos:
 
 | Sector | Código Sci-Fi | Especie Objetivo | Amenaza Marina | Profesión Marina |
 | :--- | :--- | :--- | :--- | :--- |
 | **01. Costas** | `AQUAMARINE-TURTLE` | Tortuga Laúd / Verde | Contaminación lumínica y plásticos | Buzo Científico / Voluntario |
-| **02. Pelágico** | `AZURE-JELLYFISH` | Medusa Bioluminiscente | Sopa de microplásticos | Oceanógrafo / Analista |
-| **03. Altamar** | `SAPPHIRE-WHALE` | Ballena Azul / Cetáceos | Contaminación acústica y colisiones | Especialista en Bioacústica |
-| **04. Arrecifes** | `PEARL-NAUTILUS` | Coral & Nautilus | Acidificación y blanqueamiento | Ecólogo / Ingeniero Ambiental |
+| **02. Pelágico (nivel extra)** | `AZURE-JELLYFISH` | Medusa bioluminiscente | Sopa de microplásticos | Oceanógrafo / Analista |
+| **03. Altamar (nivel extra)** | `SAPPHIRE-WHALE` | Ballena azul / Cetáceos | Contaminación acústica y colisiones | Especialista en Bioacústica |
+| **04. Arrecifes profundos (nivel extra)** | `PEARL-NAUTILUS` | Nautilus / Corales | Acidificación y blanqueamiento | Ecólogo / Ingeniero Ambiental |
 
 > *Nota: Los Diarios 02 (`EMERALD-CHAMELEON`) y 03 (`AMBER-ANT`) están preparados en la arquitectura para futuras expansiones terrestres.*
 
 
 ## Stack Tecnológico
-* **Framework:** Next.js (App Router)
-* **Estilos:** Tailwind CSS (Estética Sci-Fi / HUD Neón)
+* **Framework:** Next.js 14 (App Router)
+* **Estilos:** Tailwind CSS
 * **Iconos:** Lucide React
 * **Despliegue:** Vercel
 
 
-## Instalación y Desarrollo Local
+## Desarrollo local
 
 ```bash
-# Clonar repositorio
-git clone [https://github.com/TuUsuario/aquamarine-turtle.git](https://github.com/TuUsuario/aquamarine-turtle.git)
-
-# Entrar a la carpeta
+# Desde la raíz del repositorio
 cd aquamarine-turtle
-
-# Instalar dependencias
 npm install
-
-# Iniciar servidor de desarrollo
 npm run dev
+```
+
+Abre `http://localhost:3000`. Para validar la compilación de producción:
+
+```bash
+npm run lint
+npm run build
+npm run start
+```
+
+## Despliegue en Vercel
+
+Importa el repositorio en Vercel y configura **Root Directory** como `aquamarine-turtle`.
+Vercel detectará Next.js y ejecutará `npm run build`; la experiencia actual no requiere
+variables de entorno. Para desplegar desde el workflow de GitHub Actions, configura
+`VERCEL_TOKEN`, `VERCEL_ORG_ID` y `VERCEL_PROJECT_ID` como secretos del repositorio.

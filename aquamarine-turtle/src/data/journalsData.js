@@ -2,15 +2,17 @@ export const JOURNALS = [
   {
     id: 'aquamarine-turtle',
     codeName: 'AQUAMARINE-TURTLE',
-    title: 'Diario 01: Expedición Océano & Costas',
+    title: 'Diario 01: Aquamarine Turtle',
+    subtitle: 'Expedición Océano y Costas',
     status: 'ACTIVE',
-    description: 'Análisis de la hidrosfera terrestre, la megafauna marina y el impacto del plástico en arrecifes y zonas costeras.',
+    description: 'Una ruta de cuatro niveles: desde las costas de anidación hasta los arrecifes y las profundidades oceánicas.',
     accentColor: 'cyan',
     sectors: [
       {
         id: 'turtle-coastal',
         code: 'AQUAMARINE-TURTLE',
-        name: 'Sector 01: Orillas e Intermareal',
+        name: 'Nivel 01: Orillas e Intermareal',
+        identity: 'El punto de partida de la expedición: protege las playas donde comienza la vida.',
         targetSpecies: 'Tortuga Laúd / Verde',
         threat: 'Contaminación lumínica y plásticos en playas de desove',
         profession: 'Buzo Científico / Voluntario Costero',
@@ -20,7 +22,8 @@ export const JOURNALS = [
       {
         id: 'azure-jellyfish',
         code: 'AZURE-JELLYFISH',
-        name: 'Sector 02: Corrientes Pelágicas',
+        name: 'Nivel extra 02: Corrientes Pelágicas',
+        identity: 'Sigue la bioluminiscencia y las corrientes para explorar un océano ligero, vivo y misterioso.',
         targetSpecies: 'Medusa Bioluminiscente / Plankton',
         threat: 'Sopa de microplásticos y redes fantasma',
         profession: 'Oceanógrafo / Analista de Corrientes',
@@ -30,7 +33,8 @@ export const JOURNALS = [
       {
         id: 'sapphire-whale',
         code: 'SAPPHIRE-WHALE',
-        name: 'Sector 03: Altamar y Abismos',
+        name: 'Nivel extra 03: Altamar y Abismos',
+        identity: 'Adéntrate en la inmensidad azul y escucha los cantos que atraviesan el océano profundo.',
         targetSpecies: 'Ballena Azul / Cetáceos',
         threat: 'Contaminación acústica industrial y colisiones con buques',
         profession: 'Especialista en Bioacústica Marina',
@@ -40,7 +44,8 @@ export const JOURNALS = [
       {
         id: 'pearl-nautilus',
         code: 'PEARL-NAUTILUS',
-        name: 'Sector 04: Arrecifes Profundos',
+        name: 'Nivel extra 04: Arrecifes Profundos',
+        identity: 'Desciende con el nautilo: un símbolo de exploración entre arrecifes antiguos y profundos.',
         targetSpecies: 'Nautilus / Corales Hermatípicos',
         threat: 'Acidificación del océano y blanqueamiento coralino',
         profession: 'Ingeniero/a Ambiental / Ecólogo/a Marino',

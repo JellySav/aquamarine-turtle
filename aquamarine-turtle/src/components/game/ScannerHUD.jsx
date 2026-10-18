@@ -1,18 +1,23 @@
 // En src/components/game/ScannerHUD.jsx
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import SciFiButton from '@/components/ui/SciFiButton';
 import InteractiveMinigame from '@/components/game/InteractiveMinigame';
 import { soundFx } from '@/utils/audioManager';
-import { Search, CheckCircle, AlertTriangle, User } from 'lucide-react';
+import { Search, CheckCircle, AlertTriangle, User, Sparkles } from 'lucide-react';
 
 export default function ScannerHUD({ sector, onScan, isScanned }) {
   const [scanning, setScanning] = useState(false);
   const [minigameDone, setMinigameDone] = useState(false);
+  const scanTimer = useRef(null);
+
+  useEffect(() => () => clearTimeout(scanTimer.current), []);
 
   const handleScanAction = () => {
+    if (scanning || isScanned || !minigameDone) return;
+
     soundFx.playScan();
     setScanning(true);
-    setTimeout(() => {
+    scanTimer.current = setTimeout(() => {
       setScanning(false);
       soundFx.playSuccess();
       onScan(sector.targetSpecies);
@@ -39,27 +44,31 @@ export default function ScannerHUD({ sector, onScan, isScanned }) {
         <p className="text-xs text-slate-400 mb-1">OBJETIVO DETECTADO:</p>
         <h3 className="text-lg font-bold text-white mb-4">{sector.targetSpecies}</h3>
 
-        {/* Minijuego Interactivo */}
-        <InteractiveMinigame
-          sectorId={sector.id}
-          onComplete={() => setMinigameDone(true)}
-          isCompleted={minigameDone}
-        />
-
         {isScanned ? (
           <div className="inline-flex items-center gap-2 bg-emerald-950/80 border border-emerald-500/50 text-emerald-300 px-4 py-2 rounded-lg text-xs font-bold mt-2">
             <CheckCircle className="w-4 h-4" />
             REGISTRADO EN BITÁCORA
           </div>
         ) : (
-          <SciFiButton
-            onClick={handleScanAction}
-            disabled={scanning || !minigameDone}
-          >
-            {scanning ? 'ESCANEAR NAVE...' : minigameDone ? 'REGISTRAR ESPECIE' : 'COMPLETA LA MISION PARA ESCANEAR'}
-          </SciFiButton>
+          <>
+            <InteractiveMinigame
+              sectorId={sector.id}
+              onComplete={() => setMinigameDone(true)}
+              isCompleted={minigameDone}
+            />
+            <SciFiButton onClick={handleScanAction} disabled={scanning || !minigameDone}>
+              {scanning ? 'ESCANEANDO...' : minigameDone ? 'REGISTRAR ESPECIE' : 'COMPLETA LA MISIÓN PARA ESCANEAR'}
+            </SciFiButton>
+          </>
         )}
       </div>
+
+      {sector.identity && (
+        <div className="flex items-start gap-2 text-xs text-cyan-100/80 mb-4">
+          <Sparkles className="w-4 h-4 shrink-0 text-cyan-300" />
+          <p>{sector.identity}</p>
+        </div>
+      )}
 
       {/* Amenazas y Profesión */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">

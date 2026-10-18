@@ -27,7 +27,7 @@ export default function HomePage() {
       {/* HUD Header Global */}
       <HeaderHUD
         scannedCount={scannedSpecies.length}
-        totalSpecies={totalSectors || 4}
+        totalSpecies={totalSectors}
         onReset={selectedJournal ? resetGame : null}
       />
 
@@ -40,6 +40,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="lg:col-span-2 flex flex-col justify-between">
               <ScannerHUD
+                key={currentSector?.id}
                 sector={currentSector}
                 onScan={registerSpecies}
                 isScanned={scannedSpecies.includes(currentSector?.targetSpecies)}

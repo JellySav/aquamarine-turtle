@@ -9,14 +9,15 @@ export function useGameState() {
   const selectJournal = (journal) => {
     setSelectedJournal(journal);
     setCurrentSectorIndex(0);
+    setScannedSpecies([]);
   };
 
   const currentSector = selectedJournal?.sectors[currentSectorIndex] || null;
 
   const registerSpecies = (speciesName) => {
-    if (!scannedSpecies.includes(speciesName)) {
-      setScannedSpecies((prev) => [...prev, speciesName]);
-    }
+    setScannedSpecies((prev) =>
+      prev.includes(speciesName) ? prev : [...prev, speciesName]
+    );
   };
 
   const nextSector = () => {
