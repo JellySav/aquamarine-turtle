@@ -10,11 +10,11 @@ export default function FooterNav({ currentIndex, totalSectors, onPrev, onNext }
         onClick={onPrev}
         disabled={currentIndex === 0}
       >
-        <ArrowLeft className="w-4 h-4" /> Sector Anterior
+        <ArrowLeft className="w-4 h-4" /> Nivel Anterior
       </SciFiButton>
 
       <span className="text-xs font-mono text-cyan-400">
-        SECTOR <strong className="text-white">{currentIndex + 1}</strong> DE <strong className="text-white">{totalSectors}</strong>
+        NIVEL <strong className="text-white">{currentIndex + 1}</strong> DE <strong className="text-white">{totalSectors}</strong>
       </span>
 
       <SciFiButton
@@ -22,7 +22,7 @@ export default function FooterNav({ currentIndex, totalSectors, onPrev, onNext }
         onClick={onNext}
         disabled={currentIndex === totalSectors - 1}
       >
-        Siguiente Sector <ArrowRight className="w-4 h-4" />
+        Siguiente Nivel <ArrowRight className="w-4 h-4" />
       </SciFiButton>
     </div>
   );

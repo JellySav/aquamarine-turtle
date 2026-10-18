@@ -14,7 +14,7 @@ A través de dinámicas de escaneo estilo *Pokédex*, el juego sumerge a los vis
 
 El **Diario 01: Aquamarine Turtle** comienza en las costas y se amplía con tres niveles oceánicos:
 
-| Sector | Código Sci-Fi | Especie Objetivo | Amenaza Marina | Profesión Marina |
+| Nivel | Código Sci-Fi | Especie Objetivo | Amenaza Marina | Profesión Marina |
 | :--- | :--- | :--- | :--- | :--- |
 | **01. Costas** | `AQUAMARINE-TURTLE` | Tortuga Laúd / Verde | Contaminación lumínica y plásticos | Buzo Científico / Voluntario |
 | **02. Pelágico (nivel extra)** | `AZURE-JELLYFISH` | Medusa bioluminiscente | Sopa de microplásticos | Oceanógrafo / Analista |
@@ -25,7 +25,7 @@ El **Diario 01: Aquamarine Turtle** comienza en las costas y se amplía con tres
 
 
 ## Stack Tecnológico
-* **Framework:** Next.js 14 (App Router)
+* **Framework:** Next.js 16 (App Router)
 * **Estilos:** Tailwind CSS
 * **Iconos:** Lucide React
 * **Despliegue:** Vercel
@@ -52,5 +52,5 @@ npm run start
 
 Importa el repositorio en Vercel y configura **Root Directory** como `aquamarine-turtle`.
 Vercel detectará Next.js y ejecutará `npm run build`; la experiencia actual no requiere
-variables de entorno. Para desplegar desde el workflow de GitHub Actions, configura
+variables de entorno. El proyecto requiere Node.js 20.9 o superior. Para desplegar desde el workflow de GitHub Actions, configura
 `VERCEL_TOKEN`, `VERCEL_ORG_ID` y `VERCEL_PROJECT_ID` como secretos del repositorio.

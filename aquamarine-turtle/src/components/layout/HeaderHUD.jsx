@@ -13,7 +13,7 @@ export default function HeaderHUD({ scannedCount, totalSpecies = 4, onReset }) {
               NAVE EXPLORADORA EX-01
             </h1>
             <p className="text-[10px] text-cyan-500/80 uppercase">
-              SISTEMA AQUAMARINE-TURTLE // MISIÓN TERRESTRE
+              SISTEMA AQUAMARINE-TURTLE // EXPEDICIÓN OCEÁNICA
             </p>
           </div>
         </div>
